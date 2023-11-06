@@ -32,7 +32,7 @@ import com.example.navigationwithdata.R
 fun HalamanHome(
     onNextButtonClicked: () -> Unit
 ){
-    val image = painterResource(id = R.drawable.esteh)
+    val image = painterResource(id = R.drawable.esteh2)
     Column (
         modifier = Modifier,
         verticalArrangement = Arrangement.SpaceBetween
