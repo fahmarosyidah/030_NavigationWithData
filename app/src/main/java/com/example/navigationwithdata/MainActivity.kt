@@ -23,7 +23,7 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-                    HalamanHome(onNextButtonClicked = {})
+                    EsJumboApp()
                 }
             }
         }
@@ -34,6 +34,6 @@ class MainActivity : ComponentActivity() {
 @Composable
 fun GreetingPreview() {
     NavigationWithDataTheme {
-        HalamanHome(onNextButtonClicked = {})
+        EsJumboApp()
     }
 }
