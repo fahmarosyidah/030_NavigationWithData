@@ -136,3 +136,9 @@ private fun cancelOrderAndNavigateToRasa(
 ){
     navController.popBackStack(PengelolaHalaman.Rasa.name, inclusive = false)
 }
+
+private fun cancelOrderAndNavigateToFormulir(
+    navController: NavHostController
+){
+    navController.popBackStack(PengelolaHalaman.Formulir.name, inclusive = false)
+}
