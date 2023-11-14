@@ -2,8 +2,10 @@ package com.example.navigationwithdata
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Button
 import androidx.compose.material3.ExperimentalMaterial3Api
@@ -17,6 +19,7 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
@@ -27,6 +30,7 @@ import com.example.navigationwithdata.ui.theme.NavigationWithDataTheme
 @Composable
 fun HalamanFormulir(
     onSubmitButtonClick: (MutableList<String>) -> Unit,
+    onCancelButtonClicked: () -> Unit
 ){
     var namaTxt by remember{
         mutableStateOf("")
@@ -71,11 +75,37 @@ fun HalamanFormulir(
             }
         )
         Spacer(modifier = Modifier.padding(16.dp))
-
-        Button(
-            onClick = { onSubmitButtonClick(listDataTxt) }
-        ) {
-            Text(text = stringResource(id = R.string.btn_submit))
+        Row (
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(48.dp)
+                .weight(1f, false),
+            horizontalArrangement = Arrangement.spacedBy(dimensionResource(R.dimen.padding_medium)),
+            verticalAlignment = Alignment.Bottom
+        ){
+            Button(
+                modifier = Modifier.weight(1f),
+                onClick = { onSubmitButtonClick(listDataTxt) }
+            ) {
+                Text(text = stringResource(id = R.string.btn_submit))
+            }
+            OutlinedButton(
+                modifier = Modifier.weight(1f),
+                onClick = onCancelButtonClicked
+            ) {
+                Text(stringResource(R.string.cancel))
+            }
         }
+    }
+}
+
+@Preview(showBackground = true)
+@Composable
+fun PreviewHalamanFormulir() {
+    NavigationWithDataTheme {
+        HalamanFormulir(
+            onSubmitButtonClick = {},
+            onCancelButtonClicked = {}
+        )
     }
 }
