@@ -4,6 +4,7 @@ import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
@@ -18,6 +19,7 @@ import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.unit.dp
 import com.example.navigationwithdata.data.OrderUIState
 import com.example.navigationwithdata.ui.theme.NavigationWithDataTheme
 import com.example.navigationwithdata.ui.theme.komponen.FormatLabelharga
@@ -32,7 +34,6 @@ fun HalamanDua (
         Pair(stringResource(R.string.quantity), orderUIState.jumlah),
         Pair(stringResource(R.string.flavor), orderUIState.rasa)
     )
-
     Column (
         modifier = modifier,
         verticalArrangement =  Arrangement.SpaceBetween
@@ -41,6 +42,18 @@ fun HalamanDua (
             modifier = Modifier.padding(dimensionResource(R.dimen.padding_medium)),
             verticalArrangement = Arrangement.spacedBy(dimensionResource(R.dimen.padding_small))
         ){
+            Text(text = "Nama")
+            Text(text = orderUIState.nama, fontWeight = FontWeight.Bold)
+            Divider()
+            Spacer(modifier = Modifier.height(dimensionResource(R.dimen.padding_small)))
+            Text(text = "Alamat")
+            Text(text = orderUIState.alamat, fontWeight = FontWeight.Bold)
+            Divider()
+            Spacer(modifier = Modifier.height(dimensionResource(R.dimen.padding_small)))
+            Text(text = "Telpon")
+            Text(text = orderUIState.noTelp, fontWeight = FontWeight.Bold)
+            Divider()
+            Spacer(modifier = Modifier.height(dimensionResource(R.dimen.padding_small)))
             items.forEach{ item ->
                 Column {
                     Text(item.first.uppercase())
