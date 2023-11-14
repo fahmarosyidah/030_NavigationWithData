@@ -28,6 +28,7 @@ import com.example.navigationwithdata.ui.theme.HalamanHome
 
 enum class PengelolaHalaman {
     Home,
+    Formulir,
     Rasa,
     Summary
 }
