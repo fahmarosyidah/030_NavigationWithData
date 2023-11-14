@@ -27,7 +27,10 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.input.KeyboardType
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import com.example.navigationwithdata.ui.theme.HalamanHome
+import com.example.navigationwithdata.ui.theme.NavigationWithDataTheme
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -127,5 +130,18 @@ fun HalamanSatu(
                 }
             }
         }
+    }
+}
+
+@Preview(showBackground = true)
+@Composable
+fun PreviewHalamanSatu() {
+    NavigationWithDataTheme {
+        HalamanSatu(
+            pilihanRasa = listOf(),
+            onSelectionChanged = {  },
+            onConfirmButtonClicked = { },
+            onNextButtonClicked = { /*TODO*/ },
+            onCancelButtonClicked = { /*TODO*/ })
     }
 }

@@ -33,7 +33,7 @@ enum class PengelolaHalaman {
 }
 
 @OptIn(ExperimentalMaterial3Api::class,
-ExperimentalMaterial3Api::class)
+    ExperimentalMaterial3Api::class)
 @Composable
 fun EsJumboAppBar(
     bisaNavigasiBack: Boolean,
@@ -72,7 +72,7 @@ fun EsJumboApp(
             )
         }
     ){
-        innerPadding ->
+            innerPadding ->
         val uiState by viewModel.stateUI.collectAsState()
         NavHost(
             navController = navController,
@@ -97,7 +97,8 @@ fun EsJumboApp(
                         viewModel,
                         navController
                     )
-                    })
+                    }
+                )
             }
             composable(route = PengelolaHalaman.Summary.name){
                 HalamanDua(
